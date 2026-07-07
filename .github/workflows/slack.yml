@@ -3,10 +3,10 @@ name: Slack Daily Message
 on:
   schedule:
     # 09:30 España (verano)
-    - cron: "30 7 * * *"
+    - cron: "25 15 * * *"
 
     # 14:30 España (verano)
-    - cron: "02 14 * * *"
+    - cron: "20 17 * * *"
 
   workflow_dispatch:
 
