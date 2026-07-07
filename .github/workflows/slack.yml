@@ -6,7 +6,7 @@ on:
     - cron: "30 7 * * *"
 
     # 14:30 España (verano)
-    - cron: "30 12 * * *"
+    - cron: "02 14 * * *"
 
   workflow_dispatch:
 
