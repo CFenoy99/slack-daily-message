@@ -1,0 +1,29 @@
+name: Slack Daily Message
+
+on:
+  schedule:
+    # 09:30 España (verano)
+    - cron: "30 7 * * *"
+
+    # 14:30 España (verano)
+    - cron: "30 12 * * *"
+
+  workflow_dispatch:
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - run: python send.py
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
